@@ -1,10 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage("sonar quality check"){
+        stage('sonarquality check'){
             agent{
-                docker {
-                    image 'openjdk:11'
+                docker{
+                    image "openjdk:11"
                 }
             }
             steps{
@@ -13,7 +13,8 @@ pipeline{
                              sh "chmod 755 gradlew"
                              sh "./gradlew sonarqube"
     
-                   }
+                    }
+                    
                 }
             }
             
